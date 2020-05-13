@@ -79,6 +79,12 @@ namespace MvvX.Plugins.IOAuthClient.Droid
             }
         }
 
+        public string LoginHint
+        {
+            get => auth.LoginHint;
+            set => auth.LoginHint = value;
+        }
+
         #endregion
 
         #region Events
@@ -168,7 +174,7 @@ namespace MvvX.Plugins.IOAuthClient.Droid
                 authorizeUrl: authorizeUrl,
                 redirectUrl: redirectUrl,
                 accessTokenUrl: accessTokenUrl);
-
+                
             auth.Completed += OAuth2Authenticator_Completed;
             auth.Error += OAuth2Authenticator_Error;
         }
